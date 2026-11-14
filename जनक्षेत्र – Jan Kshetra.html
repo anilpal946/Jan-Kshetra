@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>जनक्षेत्र | Jan Kshetra – ज़मीन से असली मुद्दे</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@500;600;700&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#101a3d; --navy2:#18255a; --red:#e5322d; --blue:#1a5fd6; --yellow:#ffc815;
+  --bg:#f5f7fc; --card:#ffffff; --text:#101a3d; --muted:#55608a; --line:#dbe1f2;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0b1230;--card:#141f4a;--text:#eef1fb;--muted:#a6b0d6;--line:#26346b}
+}
+:root[data-theme="dark"]{--bg:#0b1230;--card:#141f4a;--text:#eef1fb;--muted:#a6b0d6;--line:#26346b}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Hind',system-ui,sans-serif;font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:'Khand','Hind',sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;border-bottom:3px solid var(--yellow)}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-family:'Khand';font-weight:700;font-size:26px;text-decoration:none;display:flex;gap:8px;align-items:center}
+.brand b{background:var(--red);padding:0 8px;border-radius:4px;transform:rotate(-3deg)}
+.brand i{font-style:normal;background:var(--blue);padding:0 8px;border-radius:4px;color:var(--yellow)}
+.links{display:flex;gap:20px;align-items:center}
+.links a{text-decoration:none;font-weight:500;font-size:16px;opacity:.9}
+.links a:hover{color:var(--yellow)}
+.btn{display:inline-block;background:var(--red);color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 16px 'Hind'}
+.btn.y{background:var(--yellow);color:var(--navy)!important}
+.btn:hover{filter:brightness(1.08)}
+@media(max-width:700px){.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;background:var(--blue);opacity:.25;transform:rotate(25deg);border-radius:40px}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(46px,9vw,92px);font-weight:700;max-width:12ch}
+.hero h1 span{display:block;color:var(--yellow);font-size:.5em;margin-top:10px}
+.hero p{max-width:52ch;color:#cfd7f5;font-size:19px;margin:20px 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tags{margin-top:36px;display:flex;gap:10px;flex-wrap:wrap;font-weight:500;font-size:15px;color:#aab6e6}
+.tags span{border:1px solid #3a4a8c;padding:3px 12px;border-radius:99px}
+
+/* stats */
+.stats{display:flex;gap:0;border-bottom:1px solid var(--line);background:var(--card)}
+.stats div{flex:1;padding:18px 20px;border-right:1px solid var(--line)}
+.stats div:last-child{border:0}
+.stats b{font:700 30px 'Khand';color:var(--blue);display:block;line-height:1}
+.stats small{color:var(--muted);font-size:14px}
+@media(max-width:600px){.stats{flex-wrap:wrap}.stats div{flex:1 1 50%}}
+
+section{padding:64px 0}
+h2{font-size:clamp(32px,5vw,46px);font-weight:700;margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:60ch}
+
+/* topics */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{background:var(--card);color:var(--text);border:1.5px solid var(--line);padding:7px 18px;border-radius:99px;cursor:pointer;font:500 16px 'Hind'}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.video{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column}
+.video:hover{border-color:var(--blue)}
+.thumb{aspect-ratio:16/9;display:grid;place-items:center;color:#fff;font:700 28px 'Khand';position:relative}
+.thumb::after{content:"▶";position:absolute;right:12px;bottom:10px;font-size:14px;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:4px}
+.t-kisan{background:linear-gradient(135deg,#1c8a4a,#0f4d2a)}
+.t-rozgar{background:linear-gradient(135deg,var(--blue),var(--navy2))}
+.t-pro{background:linear-gradient(135deg,var(--red),#7b1714)}
+.t-shiksha{background:linear-gradient(135deg,#c98a00,#7a4f00)}
+.video div.body{padding:14px 16px 18px}
+.video h3{font-size:22px;font-weight:600}
+.video p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.hide{display:none}
+
+/* about */
+.about{background:var(--card);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.pillars{display:grid;gap:14px}
+.pillars div{border-left:5px solid var(--yellow);padding:4px 0 4px 16px}
+.pillars div:nth-child(2){border-color:var(--red)}
+.pillars div:nth-child(3){border-color:var(--blue)}
+.pillars h3{font-size:22px}
+.pillars p{margin:2px 0 0;color:var(--muted);font-size:16px}
+
+/* contact */
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--text)}
+textarea{min-height:120px;resize:vertical}
+#msg{font-weight:600;color:var(--blue);min-height:1.5em}
+
+footer{background:var(--navy);color:#aab6e6;padding:32px 0;font-size:15px;text-align:center}
+footer a{color:var(--yellow)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="मुख्य मेन्यू">
+      <a class="brand" href="#top" aria-label="जनक्षेत्र होम"><b>JAN</b><i>KSHETRA</i></a>
+      <div class="links">
+        <a href="#videos">वीडियो</a>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#contact">संपर्क</a>
+        <a class="btn" href="https://www.youtube.com/@JanKshetra?sub_confirmation=1" target="_blank" rel="noopener">सब्सक्राइब करें</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>जनक्षेत्र<span>Ground reporting. Real issues.</span></h1>
+      <p>किसान, रोज़गार और जनता के असली मुद्दे — सीधे ज़मीन से, बिना शोर-शराबे के। जहाँ खबर होती है, हम वहीं पहुँचते हैं।</p>
+      <div class="cta">
+        <a class="btn" href="https://www.youtube.com/@JanKshetra" target="_blank" rel="noopener">YouTube पर देखें</a>
+        <a class="btn y" href="#contact">अपना मुद्दा भेजें</a>
+      </div>
+      <div class="tags"><span>किसान</span><span>रोज़गार</span><span>जनता की आवाज़</span><span>शिक्षा</span></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="wrap" style="display:flex;padding:0">
+      <div><b>139</b><small>वीडियो</small></div>
+      <div><b>147</b><small>सब्सक्राइबर</small></div>
+      <div><b>हिन्दी</b><small>भाषा</small></div>
+      <div><b>@JanKshetra</b><small>YouTube चैनल</small></div>
+    </div>
+  </div>
+
+  <section id="videos">
+    <div class="wrap">
+      <h2>ताज़ा रिपोर्ट</h2>
+      <p class="sub">विषय चुनें और रिपोर्ट देखें। (नीचे के कार्ड नमूना हैं — अपने असली वीडियो के नाम और लिंक कोड में बदलें।)</p>
+      <div class="chips" role="group" aria-label="विषय फ़िल्टर">
+        <button class="chip" data-f="all" aria-pressed="true">सभी</button>
+        <button class="chip" data-f="kisan" aria-pressed="false">किसान</button>
+        <button class="chip" data-f="rozgar" aria-pressed="false">रोज़गार</button>
+        <button class="chip" data-f="pro" aria-pressed="false">जनता के मुद्दे</button>
+        <button class="chip" data-f="shiksha" aria-pressed="false">शिक्षा</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap two">
+      <div>
+        <h2>हम क्या करते हैं</h2>
+        <p>जनक्षेत्र एक हिन्दी डिजिटल चैनल है जो गाँव, खेत, बाज़ार और दफ़्तरों से सीधी रिपोर्ट लाता है। हम सवाल पूछते हैं, जवाब दर्ज करते हैं और आम लोगों की बात आगे पहुँचाते हैं।</p>
+        <p>आपके इलाके में कोई समस्या है जिस पर रिपोर्ट बननी चाहिए? हमें बताइए।</p>
+      </div>
+      <div class="pillars">
+        <div><h3>ज़मीन से रिपोर्ट</h3><p>मौके पर जाकर, लोगों से बात करके।</p></div>
+        <div><h3>सीधे सवाल</h3><p>जिम्मेदारों से साफ़ सवाल, साफ़ जवाब।</p></div>
+        <div><h3>जनता की आवाज़</h3><p>किसान, युवा और मज़दूर — सबकी बात।</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>अपना मुद्दा भेजें</h2>
+      <p class="sub">फ़ॉर्म भरते ही आपका ईमेल ऐप खुलेगा। नीचे वाला ईमेल अपने ईमेल से बदल लें।</p>
+      <form id="f">
+        <label>नाम <input name="n" required autocomplete="name"></label>
+        <label>गाँव / शहर <input name="p" autocomplete="address-level2"></label>
+        <label>आपका मुद्दा <textarea name="m" required></textarea></label>
+        <button class="btn" type="submit">भेजें</button>
+        <div id="msg" role="status"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> जनक्षेत्र ·
+    <a href="https://www.youtube.com/@JanKshetra" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</footer>
+
+<script>
+const CHANNEL = "https://www.youtube.com/@JanKshetra";
+const EMAIL = "your-email@example.com"; // <- अपना ईमेल यहाँ डालें
+// नमूना वीडियो: title, desc, topic, link (असली वीडियो का लिंक डालें)
+const VIDEOS = [
+  {t:"खेतों में पानी का संकट",d:"सिंचाई की असली हालत, किसानों की ज़ुबानी।",k:"kisan",l:CHANNEL},
+  {t:"फसल का दाम, किसान का दर्द",d:"मंडी में क्या मिल रहा है और क्या वादा था।",k:"kisan",l:CHANNEL},
+  {t:"नौकरी की तलाश में युवा",d:"भर्ती, परीक्षा और इंतज़ार की कहानी।",k:"rozgar",l:CHANNEL},
+  {t:"गाँव में रोज़गार कहाँ?",d:"मनरेगा और स्थानीय काम का ज़मीनी सच।",k:"rozgar",l:CHANNEL},
+  {t:"टूटी सड़क, अधूरा वादा",d:"सड़क-बिजली-पानी पर सीधे सवाल।",k:"pro",l:CHANNEL},
+  {t:"अस्पताल में सुविधाएँ",d:"सरकारी अस्पताल की असली तस्वीर।",k:"pro",l:CHANNEL},
+  {t:"स्कूल की हालत",d:"शिक्षक, इमारत और बच्चों की पढ़ाई।",k:"shiksha",l:CHANNEL},
+  {t:"गाँव के बच्चे और पढ़ाई",d:"पढ़ाई के रास्ते की रुकावटें।",k:"shiksha",l:CHANNEL}
+];
+const cls = {kisan:"t-kisan",rozgar:"t-rozgar",pro:"t-pro",shiksha:"t-shiksha"};
+const lab = {kisan:"किसान",rozgar:"रोज़गार",pro:"जनता के मुद्दे",shiksha:"शिक्षा"};
+const grid = document.getElementById("grid");
+grid.innerHTML = VIDEOS.map(v =>
+  `<a class="video" data-k="${v.k}" href="${v.l}" target="_blank" rel="noopener">
+     <div class="thumb ${cls[v.k]}">${lab[v.k]}</div>
+     <div class="body"><h3>${v.t}</h3><p>${v.d}</p></div></a>`).join("");
+
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === c));
+  const f = c.dataset.f;
+  grid.querySelectorAll(".video").forEach(a => a.classList.toggle("hide", f !== "all" && a.dataset.k !== f));
+}));
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("f").addEventListener("submit", e => {
+  e.preventDefault();
+  const d = new FormData(e.target);
+  const body = `नाम: ${d.get("n")}\nस्थान: ${d.get("p")}\n\nमुद्दा:\n${d.get("m")}`;
+  location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("जनक्षेत्र – नया मुद्दा")}&body=${encodeURIComponent(body)}`;
+  document.getElementById("msg").textContent = "आपका ईमेल ऐप खुल रहा है…";
+});
+</script>
+</body>
+</html>
